@@ -1,101 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" />
   <meta property="og:title" content="disk.dog" />
   <link rel="stylesheet" href="https://ui.fosscord.com/css/index.css" />
   <title>disk.dog</title>
-  <style>
-  html,
-body {
-  margin: 0;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Roboto', sans-serif;
-  background-color: #3d5474;
-}
-
-.center-container {
-  max-width: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  border-radius: 8px;
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
-  padding: 20px;
-}
-
-.center-container h2 {
-  margin: 10px;
-}
-
-.center-container ul {
-  font-size: 20px;
-  list-style-type: none;
-}
-
-.center-container ul li {
-  width: 100%;
-  margin-bottom: 20px;
-  line-height: 1.4;
-}
-
-.center-container h3 {
-  margin: 10px;
-}
-
-.code {
-  background-color: lightgray;
-  color: black;
-  border-radius: 3px;
-  padding: 2px 5px;
-}
-
-.filter {
-  background-color: rgba(0, 0, 0, 0.5);
-  height: 100%;
-  width: 100%;
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-  </style>
-</head>
-<body>
-  <div class="filter">
-    <div class="center-container">
-      <b id="update">00d 00h 00m 00s</b>
-      <br>
-      <div id="secret"><button class="button primary" id="button">Leaks (Updated 27/09/21)</button></div>
-      <br>
-      <b><a href="https://discord.gg/7ME6vfRBYQ">Discord server</a></b>
-    </div>
-  </div>
   <script>
-  var countDownDate = /*1635724800000*/Date.now() + 2592000000;
+    var countDownDate = /*1635724800000*/Date.now() + 2592000000;
 
-setInterval(function() {
-  var now = new Date().getTime();
-  var distance = countDownDate - now;
+    setInterval(function () {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
 
-  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-  document.getElementById("update").innerHTML = days + "d " + hours + "h "
-  + minutes + "m " + seconds + "s ";
-}, 100);
+      document.getElementById("update").innerHTML = days + "d " + hours + "h "
+        + minutes + "m " + seconds + "s ";
+    }, 100);
 
     var player;
     var cookieConsent = document.querySelector('#button');
@@ -106,17 +34,93 @@ setInterval(function() {
     tag.src = 'https://www.youtube.com/iframe_api';
 
     cookieConsent.addEventListener('click', () => {
-        var frame = document.querySelector('#video-frame');
-        secret.innerHTML = '<iframe style="pointer-events: none;" id="video-frame" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?&enablejsapi=1&autoplay=1&mute=0&controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="500" height="281"></iframe>';
-        player.seekTo(0);
-        player.unMute();
+      var frame = document.querySelector('#video-frame');
+      secret.innerHTML = '<iframe style="pointer-events: none;" id="video-frame" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?&enablejsapi=1&autoplay=1&mute=0&controls=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" width="500" height="281"></iframe>';
+      player.seekTo(0);
+      player.unMute();
     });
 
     function onYouTubeIframeAPIReady() {
-        player = new YT.Player('video-frame');
+      player = new YT.Player('video-frame');
     }
 
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
   </script>
+  <style>
+    html,
+    body {
+      margin: 0;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Roboto', sans-serif;
+      background-color: #3d5474;
+    }
+
+    .center-container {
+      max-width: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 8px;
+      background-color: white;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+      padding: 20px;
+    }
+
+    .center-container h2 {
+      margin: 10px;
+    }
+
+    .center-container ul {
+      font-size: 20px;
+      list-style-type: none;
+    }
+
+    .center-container ul li {
+      width: 100%;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+
+    .center-container h3 {
+      margin: 10px;
+    }
+
+    .code {
+      background-color: lightgray;
+      color: black;
+      border-radius: 3px;
+      padding: 2px 5px;
+    }
+
+    .filter {
+      background-color: rgba(0, 0, 0, 0.5);
+      height: 100%;
+      width: 100%;
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="filter">
+    <div class="center-container">
+      <b id="update">00d 00h 00m 00s</b>
+      <br>
+      <div id="secret"><button class="button primary" id="button">Leaks (Updated 27/09/21)</button></div>
+      <br>
+      <b><a href="https://discord.gg/7ME6vfRBYQ">Discord server</a></b>
+    </div>
+  </div>
+
 </body>
+
 </html>
